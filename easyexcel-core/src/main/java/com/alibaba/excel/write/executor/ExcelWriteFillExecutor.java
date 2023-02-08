@@ -524,7 +524,8 @@ public class ExcelWriteFillExecutor extends AbstractExcelWriteExecutor {
                 continue;
             }
             int collectPrefixIndex = variable.indexOf(COLLECTION_PREFIX);
-            if (collectPrefixIndex > -1) {
+            // Fix: first dot
+            if (collectPrefixIndex == 0) {
                 if (collectPrefixIndex != 0) {
                     analysisCell.setPrefix(variable.substring(0, collectPrefixIndex));
                 }
